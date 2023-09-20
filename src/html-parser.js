@@ -47,10 +47,11 @@ function createHTMLParser () {
       }
     }
   } else {
-    var domino = require('domino')
-    Parser.prototype.parseFromString = function (string) {
-      return domino.createDocument(string)
-    }
+    import('domain').then(domino=>{
+      Parser.prototype.parseFromString = function (string) {
+            return domino.createDocument(string)
+          }
+      })
   }
   return Parser
 }
