@@ -47,7 +47,7 @@ function createHTMLParser () {
       }
     }
   } else {
-    import('domain').then(domino=>{
+    import('domino').then(domino=>{
       Parser.prototype.parseFromString = function (string) {
             return domino.createDocument(string)
           }
